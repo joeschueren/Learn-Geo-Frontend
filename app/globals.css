@@ -1,16 +1,25 @@
 :root{
-    --main-color: #212121;
-    --secondary-color: #4d4d4d;
-    --background-color: #333333}
+    --opposite: #212121;
+    --theme: #212121;
+    --main-color: #ecebeb;
+    --secondary-color: #c5c3c3;
+    --background-color: #FFFFFF;
+    --text-color: rgb(78, 78, 78);
+}
+
+img{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 
 .body{
     background-color: var(--background-color);
-    color: #cccccc;
+    color: var(--text-color);
     font-family: "Outfit";
 }
 
 .loading{
-    color: white;
+   color: var(--text-color);
    margin-left: 45vw;
    margin-top: 45vh;
 
@@ -22,8 +31,8 @@
 }
 
 .header-div{
-    background-color: var(--main-color);
-    border: 1px solid var(--main-color);
+    background-color: var(--theme);
+    border: 1px solid var(--theme);
     padding: 10px;
     color: white;
 }
@@ -31,6 +40,12 @@
 .nav-link{
     color: white;
 }
+
+.nav-link:focus{
+    color: var(--secondary-color);
+}
+
+
 
 
 .navbar-brand{
@@ -50,10 +65,10 @@
 /* Home Page Styling */
 
 .homebox{
-    background-color: var(--main-color);
-    border: 1px white solid;
+    background-color: white;
     padding: 7%;
     margin: 4% auto;
+    color: var(--text-color);
 }
 
 .home-anchor{
@@ -61,17 +76,29 @@
     text-decoration: none;
 }
 
+.page-heading{
+    color: black;
+    margin: 40px 5%;
+
+}
+
 .big{
-    width: 75%;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
 .small{
     width: 90%;
 }
 
-@media (max-width: 767px){
+@media (max-width: 1000px){
     .big, .small{
         width: 80%;
+    }
+
+    .page-heading{
+        text-align: center;
     }
 }
 
@@ -115,15 +142,17 @@
 }
 
 .filter-select{
-    background-color: var(--main-color);
-    color: white;
+    background-color: var(--opposite);
+    color: var(--background-color);
     height: 30px;
-    border: 1px solid white;
+    border: 1px solid ;
     padding-left: 0px 20px;
+    border-radius: 4px;
 }
 
 .filter-text{
  margin: auto 10px;
+ color: var(--opposite);
 }
 
 
@@ -132,7 +161,6 @@
     border: 0px;
     margin: 20px auto;
     padding-bottom: 1px;
-    background-color: var(--main-color);
 }
 
 .study-text{
@@ -141,7 +169,7 @@
 
 .study-name{
     font-size: 24px;
-    color: white;
+    color: var(--text-color);
 }
 
 
@@ -163,7 +191,7 @@
 
 .population-reveal{
     font-size: 20px;
-    color: white;
+    color: var(--text-color);
 }
 
 .gold{
@@ -189,7 +217,7 @@
 }
 
 .hl-text {
-    color: white;
+    color: var(--text-color);
     text-align: center;
 }
 
@@ -224,6 +252,7 @@
     border-radius: 5px;
     border: 0px;
     padding: 7px 12px;
+    margin-left: 4%;
     background-color: #1aa3ff;
     color: white;
 }
@@ -243,11 +272,11 @@
 }
 
 .score{
-    color: #00e600;
+    color: #24b624;
 }
 
 .score-text{
-    color: white;
+    color: var(--text-color);
 }
 
 .highscore-container{
@@ -268,7 +297,6 @@
     margin: 10%;
     width: 80%;
     padding: 5%;
-    background-color: var(--main-color);
     border: 1px solid white;
 }
 
@@ -281,7 +309,7 @@
 }
 
 .final-score{
-    color: white;
+    color: var(--text-color);
 }
 
 .whole{
@@ -289,7 +317,7 @@
 }
 
 .capital-answer{
-    color: white;
+    color: var(--text-color);
     font-size: 20px;
 }
 
@@ -307,7 +335,7 @@
 
 .capital-showing{
     text-align: center;
-    color: white;
+    color: var(--text-color);
 }
 
 .capital-button{
@@ -352,7 +380,7 @@ th, td, table{
 }
 
 .link-div{
-    border-right: 1px solid white;
+    border-right: 1px solid black;
     margin: 15%;
 }
 
@@ -367,7 +395,7 @@ th, td, table{
 }
 
 .api-link{
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -387,7 +415,7 @@ th, td, table{
 }
 
 .all-features-div::-webkit-scrollbar-thumb{
-    background-color: white;
+    background-color: var(--text-color);
 }
 
 .all-features-div::-webkit-scrollbar{
@@ -400,11 +428,11 @@ th, td, table{
 }
 
 .topic-header{
-    color: white;
+    color: var(--text-color);
     margin-bottom: 15px;
 }
 
 .api-title{
-    color: white;
+    color: var(--text-color);
 }
 

@@ -3,6 +3,7 @@ import Homebox from "./Homebox";
 
 function Home(){
     return(<div>
+        <h3 className="page-heading">Select An Activity</h3>
         <div className="container-fluid">
             <div className="row">
                 <div className="col-12 col-lg-6 col-md-12 col-sm-12">

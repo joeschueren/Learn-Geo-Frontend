@@ -2,7 +2,7 @@ import React from "react";
 
 function Studybox(props: any): JSX.Element{
     return(
-        <div className="col-12 col-lg-3 col-md-4 col-sm-12">
+        <div className="col-12 col-lg-3 col-md-6 col-sm-12">
             <div className="study-container">
                 <img src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${props.code}.svg`}/>
                 <p className="study-text study-name">{props.name}</p>
