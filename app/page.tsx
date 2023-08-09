@@ -32,7 +32,7 @@ function Home(){
                     title="Flags"
                     desc="Learn the flag of every country in the world by trying to identify which country each flag is from"/>
                 </div>
-                <div className="col-12 col-lg-4 col-md-6 col-sm-12">
+                <div className="col-12 col-lg-4 col-md-6 col-md-12">
                     <Homebox
                     size="small"
                     link="/capitals"
@@ -40,7 +40,7 @@ function Home(){
                     title="Capitals"
                     desc="Learn the capital of every country in the world by naming the capital of all the countries"/>
                 </div>
-                <div className="col-12 col-lg-4 col-md-6 col-sm-12">
+                <div className="col-12 col-lg-4 col-md-6 col-md-12">
                     <Homebox
                     size="small"
                     link="/mastery"

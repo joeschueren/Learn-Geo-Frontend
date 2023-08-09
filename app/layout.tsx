@@ -18,12 +18,14 @@ function RootLayout({
             <link href="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.css" rel="stylesheet"></link>
             </head>
             <body className="body">
-                <Header/>
-                {children}
+                <div className="container-all">
+                    <Header/>
+                    {children}
 
-                <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-                    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-                    crossOrigin=""></script>
+                    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+                        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+                        crossOrigin=""></script>
+                </div>
                 <script src="https://kit.fontawesome.com/a62fd80284.js" crossOrigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossOrigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>

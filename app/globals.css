@@ -11,6 +11,12 @@ img{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.container-all{
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: white;
+}
+
 
 .body{
     background-color: var(--background-color);
@@ -41,11 +47,21 @@ img{
     color: white;
 }
 
-.nav-link:focus{
-    color: var(--secondary-color);
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: var(--secondary-color) !important;
 }
 
+.nav-link:focus, .nav-link:hover{
+    color: white;
+}
+.nav-item{
+    color: white !important;
+}
 
+.navbar-toggler{
+    background-color: white;
+}
 
 
 .navbar-brand{
@@ -67,7 +83,7 @@ img{
 .homebox{
     background-color: white;
     padding: 7%;
-    margin: 4% auto;
+    margin: 8% auto;
     color: var(--text-color);
 }
 
@@ -170,6 +186,7 @@ img{
 .study-name{
     font-size: 24px;
     color: var(--text-color);
+    padding-top: 5%;
 }
 
 
@@ -401,6 +418,7 @@ th, td, table{
 
 .row{
     width: 100%;
+    margin:0px;
 }
 
 .all-features{
