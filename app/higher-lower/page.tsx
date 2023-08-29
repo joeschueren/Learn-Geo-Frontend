@@ -54,7 +54,7 @@ function HigherLower(): JSX.Element{
     }
 
     async function sendScore(){
-        await fetch("http://192.168.0.238:5000/score/submit",{
+        await fetch("https://learn-geo-api.onrender.com/score/submit",{
             method: 'POST',
             body: JSON.stringify({score: score, name: name}),
             headers:{
@@ -80,7 +80,7 @@ function HigherLower(): JSX.Element{
 
     if(isGameActive)
     {
-        return(countries[0] === undefined ? <h1 className="loading">Loading...</h1> : <div>
+        return(countries[0] === undefined ? <h1 className="loading">Loading...</h1> : <div className="hl-pad">
             <div className="fluid-container"></div>
                 <h1 className="score-text">Current Score: <span className="score">{score}</span></h1>
                 <h4 className="question">Which country do more people live in?</h4>
@@ -132,14 +132,6 @@ function HigherLower(): JSX.Element{
                     
                     <div className="button-container">
                         <button onClick={resetGame} className="retry-button">Retry</button>
-                    </div>
-                    <div className="highscores">
-                        <h3>Highscores:</h3>
-                        <p className="gold">1st {highScores[0].name}: {highScores[0].score}</p>
-                        <p className="silver">2nd {highScores[1].name}: {highScores[1].score}</p>
-                        <p className="bronze">3rd {highScores[2].name}: {highScores[2].score}</p>
-                        <p>4th {highScores[3].name}: {highScores[3].score}</p>
-                        <p>5th {highScores[4].name}: {highScores[4].score}</p>
                     </div>
                 </div>
             </div>);
