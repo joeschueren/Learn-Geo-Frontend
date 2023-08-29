@@ -10,9 +10,6 @@ function HigherLower(): JSX.Element{
     const [highScores, setHighScores]: [any[], any] = useState([{name: 'name', score: 0},{name: 'name', score: 0},{name: 'name', score: 0},{name: 'name', score: 0},{name: 'name', score: 0}])
 
     useEffect(() => {
-        if(score === -1){
-            setScore(0);
-        }
         async function getCountries(): Promise<any>{
             const res = await fetch("https://learn-geo-api.onrender.com/random/2");
             const data = await res.json();
@@ -72,7 +69,15 @@ function HigherLower(): JSX.Element{
     }
 
     function resetGame(){
-        setScore(-1);
+        async function getCountries(): Promise<any>{
+            const res = await fetch("https://learn-geo-api.onrender.com/random/2");
+            const data = await res.json();
+            setCountries(data);
+        }
+        if(score === 0){
+            getCountries();
+        }
+        setScore(0);
         setIsGameActive(true);
     }
 
