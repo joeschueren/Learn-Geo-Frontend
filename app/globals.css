@@ -319,6 +319,7 @@ img{
     margin: 10%;
     width: 80%;
     padding: 5%;
+    padding-top: 0px;
     border: 1px solid white;
 }
 
@@ -353,6 +354,7 @@ img{
 
 .capital-showing, .capital-question{
     padding: 4%;
+    padding-left: 0px;
 }
 
 .capital-showing{
