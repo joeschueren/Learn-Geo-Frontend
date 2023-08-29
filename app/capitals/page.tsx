@@ -12,7 +12,6 @@ function Capitals(){
     const [isCompleted, setIsCompleted]: [boolean, any] = useState(false);
 
     useEffect(() =>{
-        console.log("inside");
         async function getCountries(): Promise<void>{
             const res = await fetch(`https://learn-geo-api.onrender.com/${region}`);
             let data = await res.json();
@@ -43,7 +42,6 @@ function Capitals(){
         if(userInput.replaceAll(/[^\w\s-]/g, '').replace(/-/g, ' ').toLowerCase() ===
          countries[currentIndex].capital.replaceAll(/[^\w\s-]/g, '').replace(/-/g, ' ').toLowerCase()){
             setScore(score + 1)
-            console.log(score);
             setIsCorrect(true)
         }
         else{
