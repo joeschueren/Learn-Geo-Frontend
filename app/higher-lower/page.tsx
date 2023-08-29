@@ -14,7 +14,7 @@ function HigherLower(): JSX.Element{
             setScore(0);
         }
         async function getCountries(): Promise<any>{
-            const res = await fetch("http://192.168.0.238:5000/random/2");
+            const res = await fetch("https://learn-geo-api.onrender.com/random/2");
             const data = await res.json();
             setCountries(data);
         }
@@ -41,7 +41,7 @@ function HigherLower(): JSX.Element{
     }
 
     async function checkLowestScore(): Promise<any>{
-        const data: any = await fetch("http://192.168.0.238:5000/low-score");
+        const data: any = await fetch("https://learn-geo-api.onrender.com/low-score");
         let highscore = await data.json();
         if(score > parseInt(highscore.score)){
             setIsHighScore(true);
@@ -66,7 +66,7 @@ function HigherLower(): JSX.Element{
     }
 
     async function getScores(): Promise<any>{
-        const res = await fetch("http://192.168.0.238:5000/scores");
+        const res = await fetch("https://learn-geo-api.onrender.com/scores");
         const set = await res.json()
         await setHighScores(set);
     }

@@ -43,8 +43,8 @@ function Api(){
                         </div>
                         <div id="retrieving-info" className="feature-div">
                             <h2 className="topic-header">Retrieving Information</h2>
-                            <p>To retrieve the information about the countries make a get request to the route:
-                                "add route here" a request to the home route will return all countries of the world
+                            <p>To retrieve the information about the countries make a get request to the route:</p>
+                            <p><b>https://learn-geo-api.onrender.com/</b></p> <p>a request to the home route will return all countries of the world
                                 as an array of objects with the properties name, capital, longitude, latitude, population, 
                                 code (ISO code), and continent.
                             </p>

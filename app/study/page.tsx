@@ -11,7 +11,7 @@ function StudyPage(): JSX.Element{
     useEffect(() =>{
         console.log("inside");
         async function getCountries(): Promise<void>{
-            const res = await fetch(`http://192.168.0.238:5000/${region}`);
+            const res = await fetch(`https://learn-geo-api.onrender.com/${region}`);
             const data = await res.json();
             setCountries(data);
         }
