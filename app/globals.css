@@ -248,6 +248,12 @@ img{
     opacity: 50%;
 }
 
+@media(max-width: 767px){
+    .hl-image:hover{
+        opacity: 100%;
+    }
+}
+
 .hl-container{
     margin-top: 25px;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Homebox from "./Homebox";
 
 function Home(){
+    fetch("https://learn-geo-api.onrender.com/");
     return(<div>
         <h3 className="page-heading">Select An Activity</h3>
         <div className="container-fluid">
