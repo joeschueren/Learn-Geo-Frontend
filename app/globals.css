@@ -80,9 +80,44 @@ img{
 
 /* Home Page Styling */
 
+.home-img{
+    width: 100%;
+    background-size: contain;
+    height: 80%;
+}
+
+.home-description{
+    text-align: center;
+    color: black;
+    display: flex;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.landing-header{
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+}
+
+.anchor-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.study-anchor, .random-anchor{
+    margin: 15px;
+}
+
+
+
 .homebox{
+    width: 100%;
     background-color: white;
-    padding: 7%;
+    padding: 7% 0px;
     margin: 8% auto;
     color: var(--text-color);
 }
@@ -90,6 +125,27 @@ img{
 .home-anchor{
     color: white;
     text-decoration: none;
+}
+
+.home-container{
+    width: 90%;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+@media(min-width: 992px){
+    .left{
+        padding-right: 8vw;
+    }
+
+    .right{
+        padding-left: 8vw;
+    }
+
+    .home-description{
+        width: 80%;
+        margin: auto;
+    }
 }
 
 .page-heading{
