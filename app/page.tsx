@@ -3,6 +3,9 @@ import Homebox from "./Homebox";
 
 function Home(){
     fetch("https://learn-geo-api.onrender.com/");
+
+    const options = ["/flags", "/mastery", "/capitals", "higher-lower"];
+    const random = Math.floor(Math.random()*4)
     return(<div className="home-container">
         <div className="row home-row">
             <div className="col-lg-6">
@@ -14,8 +17,8 @@ function Home(){
                         along with a mastery challenge. Click below to study or try out a random activity.
                     </p>
                     <div className='anchor-div'>
-                        <a className="study-anchor btn btn-dark">Study</a>
-                        <a className="random-anchor btn btn-outline-dark">Random</a>
+                        <a className="study-anchor btn btn-dark" href="/study">Study</a>
+                        <a className="random-anchor btn btn-outline-dark" href={options[random]}>Random</a>
                     </div>
                 </div>
             </div>

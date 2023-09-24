@@ -32,15 +32,16 @@ img{
     font-family: "Outfit";
 }
 
-.loading{
-    width: 100vw;
+.loading-div{
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.loading{
     color: var(--text-color);
-    margin-left: 45vw;
-    margin-top: 45vh;
 
 }
 /* Header Styling */

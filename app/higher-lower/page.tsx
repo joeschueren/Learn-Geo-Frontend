@@ -85,7 +85,7 @@ function HigherLower(): JSX.Element{
 
     if(isGameActive)
     {
-        return(countries[0] === undefined ? <h1 className="loading">Loading...</h1> : <div>
+        return(countries[0] === undefined ? <div className="loading-div"><h1 className="loading">Loading...</h1></div> : <div>
             <div className="fluid-container">
             <div className="hl-whole">
                 <h1 className="score-text">Current Score: <span className="score">{score}</span></h1>

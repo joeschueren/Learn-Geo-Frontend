@@ -106,7 +106,7 @@ function Capitals(){
         </div>)
     }
 
-    else return(countries[0] === undefined ? <h1 className="loading">Loading...</h1>: <div>
+    else return(countries[0] === undefined ? <div className="loading-div"><h1 className="loading">Loading...</h1></div>: <div>
         <div className="fluid-container">
             <div className="row whole">
                 <div className="col-12 col-md-6 col-sm-12">

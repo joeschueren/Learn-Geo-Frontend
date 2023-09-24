@@ -133,7 +133,7 @@ function Capitals(){
         </div>)
     }
 
-    else return(countries[0] === undefined ? <h1 className="loading">Loading...</h1>: <div>
+    else return(countries[0] === undefined ? <div className="loading-div"><h1 className="loading">Loading...</h1></div>: <div>
         <div className="filter-container">
             <p className="filter filter-text">Select Region:</p>
             <select className="filter filter-select" onChange={handleChange}>
