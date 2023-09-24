@@ -8,6 +8,9 @@ function RootLayout({
 }: {
     children: React.ReactNode
 }){
+    const date: any = new Date();
+    const currentYear = date.getFullYear();
+
     return(
         <html>
             <head>
@@ -21,6 +24,7 @@ function RootLayout({
                 <div className="container-all">
                     <Header/>
                     {children}
+                    <footer className="footer"><a>&copy; Learn Geo - {currentYear}</a></footer>
                 </div>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossOrigin="anonymous"></script>
                 <script src="https://kit.fontawesome.com/a62fd80284.js" crossOrigin="anonymous"></script>

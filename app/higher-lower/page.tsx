@@ -85,8 +85,9 @@ function HigherLower(): JSX.Element{
 
     if(isGameActive)
     {
-        return(countries[0] === undefined ? <h1 className="loading">Loading...</h1> : <div className="hl-pad">
-            <div className="fluid-container"></div>
+        return(countries[0] === undefined ? <h1 className="loading">Loading...</h1> : <div>
+            <div className="fluid-container">
+            <div className="hl-whole">
                 <h1 className="score-text">Current Score: <span className="score">{score}</span></h1>
                 <h4 className="question">Which country do more people live in?</h4>
             <div className="row hl-container whole">
@@ -99,6 +100,8 @@ function HigherLower(): JSX.Element{
                     <h4 className="hl-text">{countries[1].name}</h4>
                     <img className="hl-image" src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${countries[1].code}.svg`} data-value={countries[1].name} onClick={handleClick}/>
                 </div>
+            </div>
+            </div>
             </div>
         </div>);
     }
