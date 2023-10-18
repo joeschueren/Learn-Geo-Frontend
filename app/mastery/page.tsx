@@ -2,15 +2,31 @@
 import React,{useState, useEffect} from "react";
 
 function Capitals(){
-    const [region, setRegion]: [string, any] = useState("na");
+    // state to track whether the game needs to be reset
+    const [reset, setReset]: [boolean, any] = useState(false);
+
+    //state to get and store the list of countries generated
     const [countries, setCountries]: [any[], any] = useState([undefined]);
+
+    //state to track where the user is along in the problem set
     const [currentIndex, setCurrentIndex]: [number, any] = useState(0);
+
+    //state to track the users score
     const [score, setScore]: [number, any] = useState(0);
+
+    // state to track the answer typed by the user
     const [userInput, setUserInput]: [string, any] = useState("");
+
+    // state to control whether the game shows a question or a review of the answer
     const [onReview, setOnReview]: [boolean, any] = useState(false);
+
+    // state to control whether the user was correct or incorrect
     const [isCorrect, setIsCorrect]: [boolean, any] = useState(false);
+
+    // state to track whether the game is completed
     const [isCompleted, setIsCompleted]: [boolean, any] = useState(false);
 
+    // gets initial list of countries from backend
     useEffect(() =>{
         console.log("inside");
         async function getCountries(): Promise<void>{
@@ -21,16 +37,15 @@ function Capitals(){
         }
         getCountries()
 
-    }, [region])
+    }, [reset])
 
+    // controlled component to track user input
     function handleTyping(event: any): void{
         setUserInput(event.target.value)
     }
 
+    // function that handles making the user answer more user-friendly when special characters are involved
     function handleSubmit(){
-
-        console.log(userInput.replaceAll(/[^\w\s-]/g, '').replace(/-/g, ' ').toLowerCase())
-        console.log(countries[currentIndex].name.replaceAll(/[^\w\s-]/g, '').replace(/-/g, ' ').toLowerCase())
 
         if(userInput.replaceAll(/[^\w\s-]/g, '').replace(/-/g, ' ').toLowerCase() ===
          countries[currentIndex].capital.replaceAll(/[^\w\s-]/g, '').replace(/-/g, ' ').toLowerCase()){
@@ -44,6 +59,7 @@ function Capitals(){
         setOnReview(true);
     }
 
+    // allows user to continue with the game by using enter
     function handleKeyDown(event: any){
         if(event.keyCode === 13)
         {
@@ -51,6 +67,7 @@ function Capitals(){
         }
     }
 
+    // function to apply logic of going to the next question
     function handleContinue(){
         setUserInput("");
         setCurrentIndex(currentIndex + 1);
@@ -61,6 +78,7 @@ function Capitals(){
         }
     }
 
+    // function to handle logic of restarting the game
     function handleRetry(){
         setCurrentIndex(0);
         setIsCompleted(false);
@@ -68,7 +86,7 @@ function Capitals(){
         setOnReview(false);
         setUserInput("");
         setScore(0);
-        setRegion(region + "n");
+        setReset(!reset);
     }
 
     if(onReview){

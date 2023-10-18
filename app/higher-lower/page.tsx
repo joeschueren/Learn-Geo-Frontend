@@ -2,13 +2,26 @@
 import React, {useState, useEffect} from "react";
 
 function HigherLower(): JSX.Element{
+
+    // state to track the users score
     const [score, setScore]: [number, any] = useState(0)
+
+    // state to manage the current countries being compared
     const [countries, setCountries]: [any[], any] = useState([undefined]);
+
+    // state to track whether the game is active or not
     const [isGameActive, setIsGameActive]: [boolean, any] = useState(true);
+
+    // state to track whether or not a highscore is being achieved
     const [isHighScore, setIsHighScore]: [boolean, any] = useState(false);
+
+    // state to allow users to submit a highscore
     const [name, setName]: [string, any] = useState("");
+
+    // state to send highscores to backend
     const [highScores, setHighScores]: [any[], any] = useState([{name: 'name', score: 0},{name: 'name', score: 0},{name: 'name', score: 0},{name: 'name', score: 0},{name: 'name', score: 0}])
 
+    // randomly retrieves 2 countries from backend to display
     useEffect(() => {
         async function getCountries(): Promise<any>{
             const res = await fetch("https://learn-geo-api.onrender.com/random/2");
@@ -18,6 +31,7 @@ function HigherLower(): JSX.Element{
         getCountries();
     },[score])
 
+    // handles user selection and updates 
     function handleClick(event: any): void{
         let higher: string = "";
         if(countries[0].population > countries[1].population){
@@ -37,6 +51,7 @@ function HigherLower(): JSX.Element{
         }
     }
 
+    // retrieves the lowest possible score that is a highscore
     async function checkLowestScore(): Promise<any>{
         const data: any = await fetch("https://learn-geo-api.onrender.com/low-score");
         let highscore = await data.json();
@@ -45,11 +60,13 @@ function HigherLower(): JSX.Element{
         }
     }
 
+    // function to handle user input of their name
     function handleChange(event: any): void{
         let input = event.target.value;
         setName(input);
     }
 
+    // sends over the user highscore
     async function sendScore(){
         await fetch("https://learn-geo-api.onrender.com/score/submit",{
             method: 'POST',
@@ -62,12 +79,14 @@ function HigherLower(): JSX.Element{
         await setIsHighScore(false);
     }
 
+    // gets scores from the backend
     async function getScores(): Promise<any>{
         const res = await fetch("https://learn-geo-api.onrender.com/scores");
         const set = await res.json()
         await setHighScores(set);
     }
 
+    // handles logic of restarting the game
     function resetGame(){
         async function getCountries(): Promise<any>{
             const res = await fetch("https://learn-geo-api.onrender.com/random/2");

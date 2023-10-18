@@ -5,8 +5,14 @@ import {useEffect} from 'react';
 import Studybox from './Studybox';
 
 function StudyPage(): JSX.Element{
+    // state to keep track of the users current region selected
     const [region, setRegion]: [string, any] = useState("na");
+
+    // state to create and update a list of countries for the selected region
     const [countries, setCountries]: [any[], any] = useState([undefined]);
+
+    // makes a call to backend to receive a list of countries and rerenderz whenever 
+    // the user selects a new region
 
     useEffect(() =>{
         console.log("inside");
@@ -19,12 +25,16 @@ function StudyPage(): JSX.Element{
 
     }, [region])
 
+    // function to track whenever the user selects a different region and update region variable accordingly
     function handleChange(event: any): void{
         const regions = ["na", "sa", "eu", "as", "af", "oc"]
         setRegion(regions[event.target.selectedIndex]);
     }
+
+    // initializes empty array to display all of the countries' components
     let componentsArray: any[] = [];
 
+    // iterates through the list of countries and generate components for each country and adds to array
     for(let i=0; i< countries.length; i += 4)
     {
         componentsArray.push(<div className="row">

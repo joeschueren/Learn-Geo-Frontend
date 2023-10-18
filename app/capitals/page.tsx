@@ -2,15 +2,31 @@
 import React,{useState, useEffect} from "react";
 
 function Capitals(){
+    // state to track wich region the user has selected
     const [region, setRegion]: [string, any] = useState("na");
+
+    // state to track the countries of the selected region
     const [countries, setCountries]: [any[], any] = useState([undefined]);
+
+    // state to track where the user is in the problem set
     const [currentIndex, setCurrentIndex]: [number, any] = useState(0);
+
+    // state to track the user's score
     const [score, setScore]: [number, any] = useState(0);
+
+    // state to track the user's input
     const [userInput, setUserInput]: [string, any] = useState("");
+
+    // state to determine whether the user is reviewing or answering
     const [onReview, setOnReview]: [boolean, any] = useState(false);
+
+    // state to track is the user was correct or not
     const [isCorrect, setIsCorrect]: [boolean, any] = useState(false);
+
+    // state to track whether the game has been completed
     const [isCompleted, setIsCompleted]: [boolean, any] = useState(false);
 
+    // gets list of countries from the backend whenever region is changed
     useEffect(() =>{
         async function getCountries(): Promise<void>{
             const res = await fetch(`https://learn-geo-api.onrender.com/${region}`);
@@ -22,6 +38,7 @@ function Capitals(){
 
     }, [region])
 
+    // handles the user selecting a different region
     function handleChange(event: any): void{
         const regions = ["na", "sa", "eu", "as", "af", "oc"]
         setRegion(regions[event.target.selectedIndex]);
@@ -33,10 +50,12 @@ function Capitals(){
         setScore(0);
     }
 
+    // tracks the user's answer to the question
     function handleTyping(event: any): void{
         setUserInput(event.target.value)
     }
 
+    // function that handles making the user answer more user-friendly when special characters are involved
     function handleSubmit(){
 
         if(userInput.replaceAll(/[^\w\s-]/g, '').replace(/-/g, ' ').toLowerCase() ===
@@ -50,6 +69,7 @@ function Capitals(){
         setOnReview(true);
     }
 
+    // allows user to progress with the enter key
     function handleKeyDown(event: any){
         if(event.keyCode === 13)
         {
@@ -57,6 +77,7 @@ function Capitals(){
         }
     }
 
+    // handles logic to go to the next question
     function handleContinue(){
         setUserInput("");
         setCurrentIndex(currentIndex + 1);
@@ -67,6 +88,7 @@ function Capitals(){
         }
     }
 
+    // handles logic to restart the game
     function handleRetry(){
         setCurrentIndex(0);
         setIsCompleted(false);
