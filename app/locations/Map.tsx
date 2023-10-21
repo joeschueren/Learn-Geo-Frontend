@@ -78,7 +78,7 @@ const Map: React.FC<props> = React.memo(function(props){
   maxZoom: 10
 }
 
-  if(geoJSONData === null){
+  if(geoJSONData === null || typeof window === "undefined"){
     return(<div className="loading-div"><h1 className="loading">Loading...</h1></div>)
 }
     else return(
