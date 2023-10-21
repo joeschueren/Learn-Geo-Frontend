@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import { MapContainer, TileLayer, GeoJSON} from 'react-leaflet';
+import { MapContainer, TileLayer, TileLayerProps, MapContainerProps, GeoJSON, GeoJSONProps} from 'react-leaflet';
 
 
 type props = {
@@ -43,6 +43,40 @@ const Map: React.FC<props> = React.memo(function(props){
 
   }
 
+  interface MapProps extends MapContainerProps{
+    center: number[],
+    zoom: number,
+    style: object,
+    maxBounds: number[][]
+  }
+
+  const mapProps: MapProps = {center:[0, 0],
+   zoom: 2,
+  style: { height: '100%', width: '100%', backgroundColor: "#c1f3f5"},
+  maxBounds: [[-90, -300], [90, 300]]}
+
+  interface GeoProps extends GeoJSONProps{
+    data: any,
+    style: Function,
+    onEachFeature: Function
+  }
+
+  const geoProps: GeoProps = {data: geoJSONData,
+  style: styleFunction,
+  onEachFeature: (feature: any, layer:any) => {
+    layer.on({
+      click: handleCountryClick,
+    });
+  }}
+
+  interface TileProps extends TileLayerProps{
+    url: string,
+    maxZoom: number;
+  }
+
+  const tileProps: TileProps = {url: "",
+  maxZoom: 10
+}
 
   if(geoJSONData === null){
     return(<div className="loading-div"><h1 className="loading">Loading...</h1></div>)
@@ -50,21 +84,9 @@ const Map: React.FC<props> = React.memo(function(props){
     else return(
       <div className="map-container">
         <div className="map">
-      <MapContainer center={[0, 0]} zoom={2} style={{ height: '100%', width: '100%', backgroundColor: "#c1f3f5"}}
-       maxBounds={[[-90, -300], [90, 300]]}>
-        <TileLayer
-          url=""
-          maxZoom={10}
-        />
-        <GeoJSON
-          data={geoJSONData}
-          style={styleFunction}
-          onEachFeature={(feature: any, layer:any) => {
-            layer.on({
-              click: handleCountryClick,
-            });
-          }}
-        />
+      <MapContainer {...mapProps}>
+        <TileLayer {...tileProps}/>
+        <GeoJSON {...geoProps}/>
       </MapContainer>
     </div>
     </div>

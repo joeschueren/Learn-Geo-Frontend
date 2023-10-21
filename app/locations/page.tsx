@@ -48,9 +48,11 @@ function Locations(){
         if(countries[0] !== undefined){
             console.log(countryPicked);
             if(countryPicked.includes(countries[currentIndex].name)){
-                setScore(score + 1);
                 setFeedback("Correct")
-                setTimeout(() => setFeedback("clear"), 1000)
+                setTimeout(() => 
+                    {setFeedback("clear")
+                     setScore(score + 1)}, 1000)
+                
             }
             else{
                 setFeedback("Incorrect")
