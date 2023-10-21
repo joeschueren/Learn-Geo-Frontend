@@ -141,20 +141,9 @@ function Capitals(){
 
     else if(isCompleted){
         return(<div>
-            <div className="filter-container">
-            <p className="filter filter-text">Select Region:</p>
-            <select className="filter filter-select" onChange={handleChange}>
-                <option>North America</option>
-                <option>South America</option>
-                <option>Europe</option>
-                <option>Asia</option>
-                <option>Africa</option>
-                <option>Australia</option>
-            </select>
-            </div>
-            <div>
-                <h1>Your Score: {score}/{currentIndex}</h1>
-                <p>Click retry to play again, or select a different region.</p>
+            <div className="completed-div">
+                <h1>Your Score: <span className="final-score">{score}/{currentIndex}</span></h1>
+                <p>Click retry to play again</p>
                 <button className="retry-button" onClick={handleRetry}>Retry</button>
             </div>
         </div>)

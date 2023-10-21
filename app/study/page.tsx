@@ -88,8 +88,10 @@ function StudyPage(): JSX.Element{
             )}
         </div>)
     }
-
-    return(countries[0] === undefined ? <h1 className="loading">Loading...</h1> : <div className="container-fluid">
+    if(countries[0] === undefined){
+        return(<div className="loading-div"><h1 className="loading">Loading...</h1></div>);
+    }
+    else return(<div className="container-fluid">
         <div className="filter-container">
             <p className="filter filter-text">Filter By:</p>
             <select className="filter filter-select" onChange={handleChange}>

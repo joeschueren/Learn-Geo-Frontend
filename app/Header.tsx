@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Header(){
     return(<div>
@@ -19,10 +20,11 @@ export default function Header(){
           </a>
           <ul className="dropdown-menu">
             <li><a className="dropdown-item" href="/study">Study</a></li>
-            <li><a className="dropdown-item" href="/higher-lower">Higher or Lower</a></li>
-            <li><a className="dropdown-item" href="/capitals">Learn Capitals</a></li>
-            <li><a className="dropdown-item" href="/flags">Learn Flags</a></li>
-            <li><a className="dropdown-item" href="/mastery">Mastery</a></li>
+            <li><Link className="dropdown-item" href="/locations">Learn Locations </Link></li>
+            <li><Link className="dropdown-item" href="/capitals">Learn Capitals</Link></li>
+            <li><Link className="dropdown-item" href="/flags">Learn Flags</Link></li>
+            <li><Link className="dropdown-item" href="/higher-lower">Higher or Lower</Link></li>
+            <li><Link className="dropdown-item" href="/mastery">Mastery</Link></li>
           </ul>
         </li>
         <li className="nav-item">

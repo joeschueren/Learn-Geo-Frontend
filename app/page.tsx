@@ -6,10 +6,10 @@ function Home(){
     fetch("https://learn-geo-api.onrender.com/");
 
     // list of all the possible routes available for the random button
-    const options = ["/flags", "/mastery", "/capitals", "higher-lower"];
+    const options = ["/flags", "/mastery", "/capitals", "higher-lower", "/locations"];
     
     // randomly selects from the list of routes for the random button
-    const random = Math.floor(Math.random()*4)
+    const random = Math.floor(Math.random()*5)
     return(<div className="home-container">
         <div className="row home-row">
             <div className="col-lg-6">
@@ -33,20 +33,28 @@ function Home(){
         <h3 className="page-heading">Select An Activity</h3>
         <div className="container-fluid">
             <div className="row">
-                <div className="col-12 col-lg-6 col-md-12 col-sm-12">
+                <div className="col-12 col-lg-4 col-md-6 col-sm-12">
+                    <Homebox
+                    size="small"
+                    link="/locations"
+                    code="CH"
+                    title="Locations"
+                    desc="Learn the locations of the all the countries on an interactive map!"/>
+                </div>
+                <div className="col-12 col-lg-4 col-md-6 col-sm-12">
                     <Homebox 
-                    size="big left"
+                    size="small"
                     link="/study"
                     code="FR"
                     title="Study" 
                     desc="Look over a list of all 196 countries and learn all of the capitals, flags, and populations of every country in the World"/>
                 </div>
-                <div className="col-12 col-lg-6 col-md-12 col-sm-12">
+                <div className="col-12 col-lg-4 col-md-6 col-sm-12">
                     <Homebox
-                    size="big right"
+                    size="small"
                     link="/higher-lower"
                     code="IN"
-                    title="Higher or Lower"
+                    title="Higher Lower"
                     desc="Try to guess which of two countries has a higher population and try to break the record for highest streak!"/>
                 </div>
             </div>
