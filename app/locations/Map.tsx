@@ -71,11 +71,13 @@ const Map: React.FC<props> = React.memo(function(props){
 
   interface TileProps extends TileLayerProps{
     url: string,
-    maxZoom: number;
+    maxZoom: number,
+    minZoom: number
   }
 
   const tileProps: TileProps = {url: "",
-  maxZoom: 10
+  maxZoom: 10,
+  minZoom: 2
 }
 
   if(geoJSONData === null || typeof window === "undefined"){

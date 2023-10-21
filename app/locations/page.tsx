@@ -113,7 +113,7 @@ function Locations(){
                     </div>
                     <div className="col-md-4">
                         <div className="location-question-div">
-                            <div>
+                            <div className="question-div">
                                 <h2 className={feedback}>{feedback}</h2>
                                 <img style={{width: "80%", marginBottom: "25px"}} src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${countries[currentIndex].code}.svg`}></img>
                                 <h4>Where is {countries[currentIndex].name} Located?</h4>

@@ -507,6 +507,10 @@ img{
     text-align: center;
 }
 
+.question-div{
+    width: 80%;
+}
+
 .Correct{
     color:#24b624;
     margin-bottom: 25px;
@@ -536,6 +540,10 @@ img{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .question-div{
+        width: 60%;
     }
 
     @media(max-width: 500px){
