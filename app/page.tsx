@@ -27,7 +27,7 @@ function Home(){
                 </div>
             </div>
             <div className="col-lg-6">
-                <img  className="home-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Artistic_depiction_of_planet_Earth.jpg/861px-Artistic_depiction_of_planet_Earth.jpg?20201109194112"/>
+                <img  className="home-img" src="landing.png"/>
             </div>
         </div>
         <h3 className="page-heading">Select An Activity</h3>
@@ -57,9 +57,8 @@ function Home(){
                     title="Higher Lower"
                     desc="Try to guess which of two countries has a higher population and try to break the record for highest streak!"/>
                 </div>
-            </div>
-            <div className="row">
-            <div className="col-12 col-lg-4 col-md-6 col-md-12">
+            
+            <div className="col-12 col-lg-4 col-md-6 col-sm-12">
                     <Homebox
                     size="small"
                     link="/flags"
@@ -67,7 +66,7 @@ function Home(){
                     title="Flags"
                     desc="Learn the flag of every country in the world by trying to identify which country each flag is from"/>
                 </div>
-                <div className="col-12 col-lg-4 col-md-6 col-md-12">
+                <div className="col-12 col-lg-4 col-md-6 col-sm-12">
                     <Homebox
                     size="small"
                     link="/capitals"
@@ -75,7 +74,7 @@ function Home(){
                     title="Capitals"
                     desc="Learn the capital of every country in the world by naming the capital of all the countries"/>
                 </div>
-                <div className="col-12 col-lg-4 col-md-6 col-md-12">
+                <div className="col-12 col-lg-4 col-md-6 col-sm-12">
                     <Homebox
                     size="small"
                     link="/mastery"
