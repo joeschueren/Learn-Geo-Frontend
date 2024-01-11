@@ -91,7 +91,7 @@ function Api(){
                         </div>
                         <div id="individually" className="feature-div">
                             <h2 className="topic-header">Retrieving by Name</h2>
-                            <p>To retrieve an individual country by name specify the endpoint /countries/country  where
+                            <p>To retrieve an individual country by name specify the endpoint /name/country  where
                                 country is the country you need the information from. An example of a retrieving Austria
                                 would be /countries/Austria. The name of the country is not case sensitive.
                             </p>

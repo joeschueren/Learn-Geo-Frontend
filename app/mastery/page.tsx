@@ -30,7 +30,7 @@ function Capitals(){
     useEffect(() =>{
         console.log("inside");
         async function getCountries(): Promise<void>{
-            const res = await fetch(`https://learn-geo-api.onrender.com/random/40`);
+            const res = await fetch(`https://hexagonal-glossy-toothbrush.glitch.me/random/40`);
             let data = await res.json();
             data = data.sort(() => Math.random() - 0.5);
             setCountries(data);

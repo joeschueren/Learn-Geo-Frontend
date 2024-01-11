@@ -17,7 +17,7 @@ function StudyPage(): JSX.Element{
     useEffect(() =>{
         console.log("inside");
         async function getCountries(): Promise<void>{
-            const res = await fetch(`https://learn-geo-api.onrender.com/${region}`);
+            const res = await fetch(`https://hexagonal-glossy-toothbrush.glitch.me/${region}`);
             const data = await res.json();
             setCountries(data);
         }

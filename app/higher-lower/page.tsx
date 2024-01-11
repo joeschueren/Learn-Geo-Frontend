@@ -24,7 +24,7 @@ function HigherLower(): JSX.Element{
     // randomly retrieves 2 countries from backend to display
     useEffect(() => {
         async function getCountries(): Promise<any>{
-            const res = await fetch("https://learn-geo-api.onrender.com/random/2");
+            const res = await fetch("https://hexagonal-glossy-toothbrush.glitch.me/random/2");
             const data = await res.json();
             setCountries(data);
         }
@@ -53,7 +53,7 @@ function HigherLower(): JSX.Element{
 
     // retrieves the lowest possible score that is a highscore
     async function checkLowestScore(): Promise<any>{
-        const data: any = await fetch("https://learn-geo-api.onrender.com/low-score");
+        const data: any = await fetch("https://hexagonal-glossy-toothbrush.glitch.me/low-score");
         let highscore = await data.json();
         if(score > parseInt(highscore.score)){
             setIsHighScore(true);
@@ -68,7 +68,7 @@ function HigherLower(): JSX.Element{
 
     // sends over the user highscore
     async function sendScore(){
-        await fetch("https://learn-geo-api.onrender.com/score/submit",{
+        await fetch("https://hexagonal-glossy-toothbrush.glitch.me/score/submit",{
             method: 'POST',
             body: JSON.stringify({score: score, name: name}),
             headers:{
@@ -81,7 +81,7 @@ function HigherLower(): JSX.Element{
 
     // gets scores from the backend
     async function getScores(): Promise<any>{
-        const res = await fetch("https://learn-geo-api.onrender.com/scores");
+        const res = await fetch("https://hexagonal-glossy-toothbrush.glitch.me/scores");
         const set = await res.json()
         await setHighScores(set);
     }
@@ -89,7 +89,7 @@ function HigherLower(): JSX.Element{
     // handles logic of restarting the game
     function resetGame(){
         async function getCountries(): Promise<any>{
-            const res = await fetch("https://learn-geo-api.onrender.com/random/2");
+            const res = await fetch("https://hexagonal-glossy-toothbrush.glitch.me/random/2");
             const data = await res.json();
             setCountries(data);
         }

@@ -2,11 +2,9 @@ import React from 'react';
 import Homebox from "./Homebox";
 
 function Home(){
-    // Makes call to backend to prepare for when a user vists a page that requires the backend
-    fetch("https://learn-geo-api.onrender.com/");
 
     // list of all the possible routes available for the random button
-    const options = ["/flags", "/mastery", "/capitals", "higher-lower", "/locations"];
+    const options = ["/flags", "/mastery", "/capitals", "/higher-lower", "/locations"];
     
     // randomly selects from the list of routes for the random button
     const random = Math.floor(Math.random()*5)

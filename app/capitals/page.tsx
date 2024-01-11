@@ -29,7 +29,7 @@ function Capitals(){
     // gets list of countries from the backend whenever region is changed
     useEffect(() =>{
         async function getCountries(): Promise<void>{
-            const res = await fetch(`https://learn-geo-api.onrender.com/${region}`);
+            const res = await fetch(`https://hexagonal-glossy-toothbrush.glitch.me/${region}`);
             let data = await res.json();
             data = data.sort(() => Math.random() - 0.5);
             setCountries(data);
